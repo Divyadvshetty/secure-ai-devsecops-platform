@@ -1,57 +1,5 @@
-Yesterday 4:39 PM
-
-#### You said:
-
-do not give all session at once give me session by session details which i can cover in 2 hours per day
-
-#### ChatGPT said:
-
-Understood. We will change the training approach to 2 hours per day, one day at a time.
-
-I will not provide all sessions or the complete course material in one response.
-
-### How we will conduct each day's training
-
-Each day will contain:
-
-| Activity | Duration |
-| --- | --- |
-| Concept explanation — what, why and how | 30 min |
-| Deep technical explanation and diagrams | 25 min |
-| Live Linux command demonstrations | 25 min |
-| Student hands-on exercises | 25 min |
-| Revision and interview questions | 15 min |
-| Total | 120 min |
-
-For every day, I will provide:
-
-* Beginner-friendly explanations and real-world analogies.
-* Technical internals and architecture diagrams where useful.
-* Commands explained individually, including options and expected output.
-* Production scenarios and troubleshooting exercises.
-* Practical tasks students must execute themselves.
-* Interview questions with answers.
-* Homework and preparation for the next day.
-
-We will follow your uploaded training requirements, covering all nine topic areas progressively. We will not rush topics just to finish the syllabus.
-
-Our rule: I will provide only one day's complete teaching material per response. We move to the next day only when you ask me to continue.
-
-We can start with Day 1 — Introduction to Operating Systems, Linux Fundamentals and Linux Architecture (2 hours).
-
-#### You said:
-
-yes go ahead
-
-#### ChatGPT said:
 
 # Day 1 — Introduction to Operating Systems and Linux Architecture
-
-Day 1
-
-2 hours
-
-Beginner level
 
 Today's objective: By the end of these two hours, students should understand what an operating system does, what Linux is, how Linux is structured, and how an application interacts with the operating system.
 
@@ -1190,7 +1138,8 @@ Check the corresponding files:
 Bash
 
 ```
-ls -lh /boot/vmlinuz-$(uname -r)
+ls -lh /boot/vmlinuz-$(uname -r)
+
 ls -lh /boot/initrd.img-$(uname -r)
 ```
 
@@ -1509,7 +1458,8 @@ The engineer should investigate:
 Bash
 
 ```
-systemctl is-active docker
+systemctl is-active docker
+
 systemctl is-enabled docker
 ```
 
@@ -1559,13 +1509,20 @@ Students should execute these commands individually.
 Bash
 
 ```
-# Distribution
-cat /etc/os-release
-
-# Kernel version
-uname -r
-
-# Boot mode
+# Distribution
+
+cat /etc/os-release
+
+
+
+# Kernel version
+
+uname -r
+
+
+
+# Boot mode
+
 test -d /sys/firmware/efi && echo "UEFI boot" || echo "Legacy BIOS boot"
 ```
 
@@ -1574,13 +1531,20 @@ test -d /sys/firmware/efi && echo "UEFI boot" || echo "Legacy BIOS boot"
 Bash
 
 ```
-# List boot directory
-ls -lh /boot
-
-# List kernel images
-ls -lh /boot/vmlinuz*
-
-# List initramfs images
+# List boot directory
+
+ls -lh /boot
+
+
+
+# List kernel images
+
+ls -lh /boot/vmlinuz*
+
+
+
+# List initramfs images
+
 ls -lh /boot/initrd.img*
 ```
 
@@ -1599,8 +1563,10 @@ Ask students to identify PID 1.
 Bash
 
 ```
-systemctl --version
-systemctl get-default
+systemctl --version
+
+systemctl get-default
+
 systemctl status
 ```
 
@@ -1684,34 +1650,62 @@ An experienced engineer does not immediately restart the application. First, the
 Bash
 
 ```
-# 1. Identify the running kernel
-uname -r
-
-# 2. Identify the current boot time
-uptime -s
-
-# 3. Review current boot logs
-journalctl -b -n 100 --no-pager
-
-# 4. Review errors from the current boot
-journalctl -b -p err --no-pager
-
-# 5. Review kernel messages
-dmesg -T | tail -50
-
-# 6. Identify failed systemd units
-systemctl --failed
-
-# 7. Check the default target
-systemctl get-default
-
-# 8. Check systemd startup timing
-systemd-analyze
-
-# 9. Identify slow-starting units
-systemd-analyze blame | head -15
-
-# 10. Inspect the boot filesystem
+# 1. Identify the running kernel
+
+uname -r
+
+
+
+# 2. Identify the current boot time
+
+uptime -s
+
+
+
+# 3. Review current boot logs
+
+journalctl -b -n 100 --no-pager
+
+
+
+# 4. Review errors from the current boot
+
+journalctl -b -p err --no-pager
+
+
+
+# 5. Review kernel messages
+
+dmesg -T | tail -50
+
+
+
+# 6. Identify failed systemd units
+
+systemctl --failed
+
+
+
+# 7. Check the default target
+
+systemctl get-default
+
+
+
+# 8. Check systemd startup timing
+
+systemd-analyze
+
+
+
+# 9. Identify slow-starting units
+
+systemd-analyze blame | head -15
+
+
+
+# 10. Inspect the boot filesystem
+
 df -h /boot
 ```
 
@@ -1978,8 +1972,10 @@ Ask students to execute:
 Bash
 
 ```
-touch report.txt
-
+touch report.txt
+
+
+
 ls -li report.txt
 ```
 
@@ -2087,7 +2083,8 @@ Demonstration:
 Bash
 
 ```
-ls -l /etc
+ls -l /etc
+
 ls -l /etc/ssh
 ```
 
@@ -2132,7 +2129,8 @@ Demonstration:
 Bash
 
 ```
-ls -l /var
+ls -l /var
+
 ls -l /var/log
 ```
 
@@ -2173,8 +2171,10 @@ Demonstration:
 Bash
 
 ```
-ls /usr
-ls /usr/bin | head
+ls /usr
+
+ls /usr/bin | head
+
 ls /usr/sbin | head
 ```
 
@@ -2233,8 +2233,10 @@ Demonstrate:
 Bash
 
 ```
-ls /sys
-ls /sys/class
+ls /sys
+
+ls /sys/class
+
 ls /sys/block
 ```
 
@@ -2268,7 +2270,8 @@ Demonstrate:
 Bash
 
 ```
-ls -l /dev/null
+ls -l /dev/null
+
 ls -l /dev/tty
 ```
 
@@ -2310,8 +2313,10 @@ Create a practice file:
 Bash
 
 ```
-touch /tmp/linux-training-test.txt
-
+touch /tmp/linux-training-test.txt
+
+
+
 ls -l /tmp/linux-training-test.txt
 ```
 
@@ -2342,8 +2347,10 @@ Demonstrate:
 Bash
 
 ```
-cd /
-cd /etc
+cd /
+
+cd /etc
+
 pwd
 ```
 
@@ -2398,7 +2405,8 @@ Shows the current working directory.
 Bash
 
 ```
-cd ~
+cd ~
+
 pwd
 ```
 
@@ -2407,7 +2415,8 @@ Moves to the current user's home directory.
 Bash
 
 ```
-cd ..
+cd ..
+
 pwd
 ```
 
@@ -2416,7 +2425,8 @@ Moves one directory level up.
 Bash
 
 ```
-cd /
+cd /
+
 pwd
 ```
 
@@ -2425,7 +2435,8 @@ Moves to the root directory.
 Bash
 
 ```
-cd /var/log
+cd /var/log
+
 pwd
 ```
 
@@ -2434,7 +2445,8 @@ Moves to `/var/log`.
 Bash
 
 ```
-cd -
+cd -
+
 pwd
 ```
 
@@ -2447,7 +2459,8 @@ Imagine a deployment script contains:
 Bash
 
 ```
-cd /opt/myapp
+cd /opt/myapp
+
 ./deploy.sh
 ```
 
@@ -2516,8 +2529,10 @@ Demonstrate:
 Bash
 
 ```
-ls -l /etc
-ls -lah /var/log
+ls -l /etc
+
+ls -lah /var/log
+
 ls -ld /home
 ```
 
@@ -2546,11 +2561,16 @@ Examples:
 Bash
 
 ```
-cd /
-cd /etc
-cd /var/log
-cd ~
-cd ..
+cd /
+
+cd /etc
+
+cd /var/log
+
+cd ~
+
+cd ..
+
 cd -
 ```
 
@@ -2589,7 +2609,8 @@ Explain:
 Bash
 
 ```
-mkdir empty-lab
+mkdir empty-lab
+
 rmdir empty-lab
 ```
 
@@ -2604,14 +2625,22 @@ Ask students to perform the following without copying the next command until the
 Bash
 
 ```
-pwd
-mkdir -p ~/linux-training/day3
-cd ~/linux-training/day3
-pwd
-mkdir config logs scripts
-ls -l
-cd ..
-pwd
+pwd
+
+mkdir -p ~/linux-training/day3
+
+cd ~/linux-training/day3
+
+pwd
+
+mkdir config logs scripts
+
+ls -l
+
+cd ..
+
+pwd
+
 ls -la
 ```
 
@@ -2652,18 +2681,30 @@ A hidden file is not automatically protected or encrypted. Permissions still det
 Bash
 
 ```
-cd ~/linux-training/day3
-
-touch normal.txt
-touch .hidden-config
-
-# Normal listing
-ls
-
-# Include hidden entries
-ls -a
-
-# Detailed listing including hidden entries
+cd ~/linux-training/day3
+
+
+
+touch normal.txt
+
+touch .hidden-config
+
+
+
+# Normal listing
+
+ls
+
+
+
+# Include hidden entries
+
+ls -a
+
+
+
+# Detailed listing including hidden entries
+
 ls -la
 ```
 
@@ -2701,9 +2742,12 @@ Create a lab directory:
 Bash
 
 ```
-cd ~/linux-training/day3
-
-mkdir -p config
+cd ~/linux-training/day3
+
+
+
+mkdir -p config
+
 echo "Application configuration" > config/app.conf
 ```
 
@@ -2830,13 +2874,20 @@ Execute:
 Bash
 
 ```
-ls -ld /
-ls -ld /etc
-ls -ld /var
-ls -ld /usr
-ls -ld /home
-ls -ld /tmp
-ls -ld /proc
+ls -ld /
+
+ls -ld /etc
+
+ls -ld /var
+
+ls -ld /usr
+
+ls -ld /home
+
+ls -ld /tmp
+
+ls -ld /proc
+
 ls -ld /sys
 ```
 
@@ -2855,8 +2906,10 @@ Create sample files:
 Bash
 
 ```
-touch ~/linux-training/day3/myapp/config/app.conf
-touch ~/linux-training/day3/myapp/logs/app.log
+touch ~/linux-training/day3/myapp/config/app.conf
+
+touch ~/linux-training/day3/myapp/logs/app.log
+
 touch ~/linux-training/day3/myapp/scripts/start.sh
 ```
 
@@ -2865,7 +2918,8 @@ Inspect the structure:
 Bash
 
 ```
-ls -la ~/linux-training/day3/myapp
+ls -la ~/linux-training/day3/myapp
+
 ls -la ~/linux-training/day3/myapp/config
 ```
 
@@ -2890,12 +2944,18 @@ Ask students to explain why an application might separate configuration, logs, d
 Bash
 
 ```
-cd ~/linux-training/day3/myapp
-
-ln -s config/app.conf application-config
-
-ls -l application-config
-readlink application-config
+cd ~/linux-training/day3/myapp
+
+
+
+ln -s config/app.conf application-config
+
+
+
+ls -l application-config
+
+readlink application-config
+
 cat application-config
 ```
 
@@ -2911,13 +2971,20 @@ Questions:
 Bash
 
 ```
-cd ~/linux-training/day3
-
-touch .student-config
-touch student-notes.txt
-
-ls
-ls -a
+cd ~/linux-training/day3
+
+
+
+touch .student-config
+
+touch student-notes.txt
+
+
+
+ls
+
+ls -a
+
 ls -la
 ```
 
@@ -2928,19 +2995,32 @@ Ask students to explain why the output changes.
 Bash
 
 ```
-cd /
-pwd
-
-cd /etc
-pwd
-
-cd ..
-pwd
-
-cd ~
-pwd
-
-cd ~/linux-training/day3
+cd /
+
+pwd
+
+
+
+cd /etc
+
+pwd
+
+
+
+cd ..
+
+pwd
+
+
+
+cd ~
+
+pwd
+
+
+
+cd ~/linux-training/day3
+
 pwd
 ```
 
@@ -2967,10 +3047,14 @@ Try:
 Bash
 
 ```
-pwd
-ls -ld /opt
-ls -ld /opt/myapp
-ls -l /opt/myapp/config
+pwd
+
+ls -ld /opt
+
+ls -ld /opt/myapp
+
+ls -l /opt/myapp/config
+
 find /opt/myapp -type f -name 'app.conf'
 ```
 
@@ -2979,8 +3063,10 @@ If the path exists, inspect it:
 Bash
 
 ```
-stat /opt/myapp/config/app.conf
-readlink /opt/myapp/config/app.conf
+stat /opt/myapp/config/app.conf
+
+readlink /opt/myapp/config/app.conf
+
 readlink -f /opt/myapp/config/app.conf
 ```
 
@@ -3011,11 +3097,16 @@ Introduce these commands:
 Bash
 
 ```
-df -h
-df -i
-du -sh /var
-du -sh /var/log
-du -sh /var/cache
+df -h
+
+df -i
+
+du -sh /var
+
+du -sh /var/log
+
+du -sh /var/cache
+
 du -h --max-depth=1 /var 2>/dev/null
 ```
 
@@ -3051,9 +3142,12 @@ Investigate:
 Bash
 
 ```
-ls -l /opt/myapp/current
-readlink /opt/myapp/current
-readlink -f /opt/myapp/current
+ls -l /opt/myapp/current
+
+readlink /opt/myapp/current
+
+readlink -f /opt/myapp/current
+
 ls -ld /opt/myapp
 ```
 
@@ -3198,13 +3292,20 @@ Examples:
 Bash
 
 ```
-pwd
-ls
-mkdir
-touch
-cp
-mv
-rm
+pwd
+
+ls
+
+mkdir
+
+touch
+
+cp
+
+mv
+
+rm
+
 cat
 ```
 
@@ -3243,10 +3344,14 @@ Examples:
 Bash
 
 ```
-cd
-pwd
-echo
-alias
+cd
+
+pwd
+
+echo
+
+alias
+
 export
 ```
 
@@ -3257,10 +3362,14 @@ Examples:
 Bash
 
 ```
-ls
-cp
-mv
-mkdir
+ls
+
+cp
+
+mv
+
+mkdir
+
 cat
 ```
 
@@ -3269,9 +3378,12 @@ Students can investigate using:
 Bash
 
 ```
-type cd
-type ls
-type pwd
+type cd
+
+type ls
+
+type pwd
+
 type cp
 ```
 
@@ -3307,8 +3419,10 @@ Other useful options:
 Bash
 
 ```
-ls --help
-cp --help
+ls --help
+
+cp --help
+
 mkdir --help
 ```
 
@@ -3460,10 +3574,14 @@ Demonstrate:
 Bash
 
 ```
-echo "Application started" > app.log
-
-touch app.log
-
+echo "Application started" > app.log
+
+
+
+touch app.log
+
+
+
 cat app.log
 ```
 
@@ -3564,8 +3682,10 @@ Examples:
 Bash
 
 ```
-file app.conf
-file /bin/ls
+file app.conf
+
+file /bin/ls
+
 file /etc/passwd
 ```
 
@@ -3660,10 +3780,14 @@ Create sample files:
 Bash
 
 ```
-touch ~/linux-training/day4/myapp/config/app.conf
-
-touch ~/linux-training/day4/myapp/logs/app.log
-
+touch ~/linux-training/day4/myapp/config/app.conf
+
+
+
+touch ~/linux-training/day4/myapp/logs/app.log
+
+
+
 touch ~/linux-training/day4/myapp/scripts/start.sh
 ```
 
@@ -3672,8 +3796,10 @@ Add content:
 Bash
 
 ```
-echo "APP_NAME=training-app" > ~/linux-training/day4/myapp/config/app.conf
-
+echo "APP_NAME=training-app" > ~/linux-training/day4/myapp/config/app.conf
+
+
+
 echo "Application started" > ~/linux-training/day4/myapp/logs/app.log
 ```
 
@@ -3730,10 +3856,14 @@ Create a file using a heredoc:
 Bash
 
 ```
-cat > sample.conf <<EOF
-APP_NAME=demo
-APP_PORT=8080
-ENVIRONMENT=development
+cat > sample.conf <<EOF
+
+APP_NAME=demo
+
+APP_PORT=8080
+
+ENVIRONMENT=development
+
 EOF
 ```
 
@@ -3873,9 +4003,12 @@ Examples:
 Bash
 
 ```
-wc app.log
-wc -l app.log
-wc -w app.log
+wc app.log
+
+wc -l app.log
+
+wc -w app.log
+
 wc -c app.log
 ```
 
@@ -3989,8 +4122,10 @@ Create a sample file:
 Bash
 
 ```
-cd ~/linux-training/day4/myapp
-
+cd ~/linux-training/day4/myapp
+
+
+
 echo "APP_PORT=8080" > config/app.conf
 ```
 
@@ -4017,7 +4152,8 @@ Inspect both:
 Bash
 
 ```
-cat config/app.conf
+cat config/app.conf
+
 cat config/app-backup.conf
 ```
 
@@ -4138,7 +4274,8 @@ A basic backup step could be:
 Bash
 
 ```
-cp -p /opt/myapp/config/app.conf \
+cp -p /opt/myapp/config/app.conf \
+
       /opt/myapp/config/app.conf.backup
 ```
 
@@ -4173,9 +4310,12 @@ Create a disposable test file:
 Bash
 
 ```
-cd ~/linux-training/day4
-
-touch test-delete.txt
+cd ~/linux-training/day4
+
+
+
+touch test-delete.txt
+
 ls -l test-delete.txt
 ```
 
@@ -4211,8 +4351,10 @@ Demonstrate safer interactive removal:
 Bash
 
 ```
-touch sample.txt
-
+touch sample.txt
+
+
+
 rm -i sample.txt
 ```
 
@@ -4279,7 +4421,8 @@ Before a deletion operation, inspect the target:
 Bash
 
 ```
-printf 'Target: <%s>\n' "$TARGET_DIR"
+printf 'Target: <%s>\n' "$TARGET_DIR"
+
 ls -ld -- "$TARGET_DIR"
 ```
 
@@ -4317,8 +4460,10 @@ Create files:
 Bash
 
 ```
-touch ~/deployments/myapp/config/app.conf
-touch ~/deployments/myapp/logs/app.log
+touch ~/deployments/myapp/config/app.conf
+
+touch ~/deployments/myapp/logs/app.log
+
 touch ~/deployments/myapp/scripts/deploy.sh
 ```
 
@@ -4327,10 +4472,14 @@ Add configuration:
 Bash
 
 ```
-cat > ~/deployments/myapp/config/app.conf <<EOF
-APP_NAME=myapp
-APP_PORT=8080
-ENVIRONMENT=development
+cat > ~/deployments/myapp/config/app.conf <<EOF
+
+APP_NAME=myapp
+
+APP_PORT=8080
+
+ENVIRONMENT=development
+
 EOF
 ```
 
@@ -4339,7 +4488,8 @@ Verify:
 Bash
 
 ```
-ls -R ~/deployments/myapp
+ls -R ~/deployments/myapp
+
 cat ~/deployments/myapp/config/app.conf
 ```
 
@@ -4369,9 +4519,12 @@ Possible investigation:
 Bash
 
 ```
-pwd
-ls -la
-ls -la target/
+pwd
+
+ls -la
+
+ls -la target/
+
 find . -type f -name "*.jar"
 ```
 
@@ -4396,7 +4549,8 @@ Demonstrate:
 Bash
 
 ```
-cp -p ~/deployments/myapp/config/app.conf \
+cp -p ~/deployments/myapp/config/app.conf \
+
       ~/deployments/myapp/backup/app.conf.backup
 ```
 
@@ -4405,8 +4559,10 @@ Verify:
 Bash
 
 ```
-ls -l ~/deployments/myapp/backup
-stat ~/deployments/myapp/config/app.conf
+ls -l ~/deployments/myapp/backup
+
+stat ~/deployments/myapp/config/app.conf
+
 stat ~/deployments/myapp/backup/app.conf.backup
 ```
 
@@ -4427,12 +4583,18 @@ Create test log entries:
 Bash
 
 ```
-cat > ~/deployments/myapp/logs/app.log <<EOF
-2026-11-03 10:00:00 INFO Application started
-2026-11-03 10:01:00 INFO Database connected
-2026-11-03 10:02:00 ERROR Database connection timeout
-2026-11-03 10:03:00 INFO Retry initiated
-2026-11-03 10:04:00 ERROR Database connection failed
+cat > ~/deployments/myapp/logs/app.log <<EOF
+
+2026-11-03 10:00:00 INFO Application started
+
+2026-11-03 10:01:00 INFO Database connected
+
+2026-11-03 10:02:00 ERROR Database connection timeout
+
+2026-11-03 10:03:00 INFO Retry initiated
+
+2026-11-03 10:04:00 ERROR Database connection failed
+
 EOF
 ```
 
@@ -4489,10 +4651,14 @@ A basic Ansible task to create a directory:
 YAML
 
 ```
-- name: Create application directory
-  ansible.builtin.file:
-    path: /opt/myapp/logs
-    state: directory
+- name: Create application directory
+
+  ansible.builtin.file:
+
+    path: /opt/myapp/logs
+
+    state: directory
+
     mode: "0755"
 ```
 
