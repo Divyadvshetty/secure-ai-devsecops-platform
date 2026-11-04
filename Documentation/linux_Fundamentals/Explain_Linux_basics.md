@@ -1,30 +1,6 @@
 
 # Day 1 — Introduction to Operating Systems and Linux Architecture
 
-Today's objective: By the end of these two hours, students should understand what an operating system does, what Linux is, how Linux is structured, and how an application interacts with the operating system.
-
-We will not try to teach the entire Linux filesystem or all Linux commands today. Those will be covered separately, one day at a time.
-
-The teaching approach follows your training brief: assume no prior Linux knowledge, explain concepts using analogies, connect them to real DevOps work, and make students execute commands themselves. 
-
-Pasted text(5).txt
-
-## 1. Today's timetable
-
-| Time | Duration | Topic |
-| --- | --- | --- |
-| 00:00–00:10 | 10 min | Introduction: why do we need an OS? |
-| 00:10–00:30 | 20 min | What is an operating system? |
-| 00:30–00:55 | 25 min | What is Linux? Kernel vs distribution |
-| 00:55–01:15 | 20 min | Linux architecture: hardware, kernel and user space |
-| 01:15–01:40 | 25 min | How applications interact with the kernel |
-| 01:40–01:50 | 10 min | Live Linux terminal demonstration |
-| 01:50–02:00 | 10 min | Revision and interview questions |
-
-# Part 1 — Why do we need an operating system?
-
-00:00–00:10 · 10 minutes
-
 ### 1.1 Start with a real-world example
 
 Ask your students:
