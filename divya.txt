@@ -2,3 +2,4 @@ this is my sample file
 goodmorning
 this is another file
 record the changes
+this is new record
