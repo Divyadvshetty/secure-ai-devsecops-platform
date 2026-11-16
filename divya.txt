@@ -4,3 +4,4 @@ this is another file
 record the changes
 this is my file
 this is new record
+today is monday
